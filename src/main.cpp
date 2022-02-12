@@ -1,8 +1,9 @@
 #include <iostream>
-#include "yahtzee/die.h"
+#include "yahtzee/scorecard.h"
 
 int main()
 {
     std::cout << "Yathzee - Created in C++" << std::endl;
+
     return 0;
 }
