@@ -1,12 +1,19 @@
 #include <iostream>
-#include "yahtzee/player.h"
+#include "yahtzee/yahtzee.h"
 
 int main()
 {
+    // Header
     std::cout << "Yathzee - Created in C++"
               << std::endl
               << std::endl;
 
+    // Class for the game
+    yahtzee::Yahtzee game;
+
+    // Ask the user for the names of the players
+    // Counter for the users
+    uint16_t player_id = 0;
     while (true)
     {
         // Ask the user for the name of the player
@@ -19,10 +26,8 @@ int main()
             break;
 
         // Add the new player to the list
-        // TODO: implement
+        game.add_player(name);
     }
-
-    std::cout << "Added " << player_id << " players" << std::endl;
 
     return 0;
 }
