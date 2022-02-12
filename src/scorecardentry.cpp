@@ -3,7 +3,7 @@
 namespace yahtzee
 {
     ScoreCardEntry::ScoreCardEntry()
-        : __points(0), __name("Undefined")
+        : __points(0), __name("")
     {
     }
 
