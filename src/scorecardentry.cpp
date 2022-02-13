@@ -121,4 +121,30 @@ namespace yahtzee
             __points = 25;
         }
     }
+
+    /***
+     * ScoreCardEntryStraight
+     */
+
+    // Constructor sets default values
+    ScoreCardEntryStraight::ScoreCardEntryStraight(bool is_small_straight, std::string name)
+        : __is_small_straight(is_small_straight), ScoreCardEntry(name)
+    {
+    }
+
+    // Method to set the points for the object
+    void ScoreCardEntryStraight::set_points(uint16_t points)
+    {
+        // We can only set the points if they are valid for this entry. If it is
+        // invalid, we set the points to 0
+        __points = 0;
+        if (points == 30 && __is_small_straight)
+        {
+            __points = 30;
+        }
+        else if (points == 40 && !__is_small_straight)
+        {
+            __points = 40;
+        }
+    }
 }

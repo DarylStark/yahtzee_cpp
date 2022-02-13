@@ -65,6 +65,17 @@ namespace yahtzee
         ScoreCardEntryFullHouse(std::string name = "");
         void set_points(uint16_t points);
     };
+
+    // Class that represents a straight
+    class ScoreCardEntryStraight : public ScoreCardEntry
+    {
+    private:
+        bool __is_small_straight;
+
+    public:
+        ScoreCardEntryStraight(bool is_small_straight = false, std::string name = "");
+        void set_points(uint16_t points);
+    };
 }
 
 #endif
