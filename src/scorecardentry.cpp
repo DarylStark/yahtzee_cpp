@@ -90,7 +90,7 @@ namespace yahtzee
     // Method to set the points for the object
     void ScoreCardEntryMultiple::set_points(const uint16_t points)
     {
-        // We an only set the points if they are valid for this entry. If it is
+        // We can only set the points if they are valid for this entry. If it is
         // invalid, we set the points to 0
         __points = 0;
         if (points >= __multiplier && points <= 30)
@@ -99,4 +99,26 @@ namespace yahtzee
         }
     }
 
+    /***
+     * ScoreCardEntryFullHouse
+     */
+
+    // Constructor sets default values
+    ScoreCardEntryFullHouse::ScoreCardEntryFullHouse(std::string name)
+        : ScoreCardEntry(name)
+    {
+    }
+
+    // Method to set the points for the object
+    void ScoreCardEntryFullHouse::set_points(uint16_t points)
+    {
+        // We can only set the points if they are valid for this entry. If it is
+        // invalid, we set the points to 0. For Full House, there are only two
+        // possibilities: 25 points or no points.
+        __points = 0;
+        if (points == 25)
+        {
+            __points = 25;
+        }
+    }
 }

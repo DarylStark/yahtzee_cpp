@@ -57,6 +57,14 @@ namespace yahtzee
         void set_multiplier(const uint16_t multipier);
         void set_points(const uint16_t points);
     };
+
+    // Class that represents Full House
+    class ScoreCardEntryFullHouse : public ScoreCardEntry
+    {
+    public:
+        ScoreCardEntryFullHouse(std::string name = "");
+        void set_points(uint16_t points);
+    };
 }
 
 #endif
