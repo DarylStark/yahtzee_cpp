@@ -84,6 +84,14 @@ namespace yahtzee
         ScoreCardEntryYahtzee(std::string name = "");
         void set_points(uint16_t points);
     };
+
+    // Class that represents a free field entry, like 'chance'
+    class ScoreCardEntryFree : public ScoreCardEntry
+    {
+    public:
+        ScoreCardEntryFree(std::string name = "");
+        void set_points(uint16_t points);
+    };
 }
 
 #endif

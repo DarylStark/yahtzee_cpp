@@ -164,4 +164,21 @@ namespace yahtzee
         // invalid, we set the points to 0
         __points = points == 50 ? points : 0;
     }
+
+    /***
+     * ScoreCardEntryFree
+     ***/
+
+    // Constructor sets default values
+    ScoreCardEntryFree::ScoreCardEntryFree(std::string name)
+        : ScoreCardEntry(name)
+    {
+    }
+
+    void ScoreCardEntryFree::set_points(uint16_t points)
+    {
+        // We can only set the points if they are valid for this entry. If it is
+        // invalid, we set the points to 0
+        __points = points >= 5 && points <= 30 ? points : 0;
+    }
 }
