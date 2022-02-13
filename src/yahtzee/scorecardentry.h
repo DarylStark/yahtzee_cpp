@@ -76,6 +76,14 @@ namespace yahtzee
         ScoreCardEntryStraight(bool is_small_straight = false, std::string name = "");
         void set_points(uint16_t points);
     };
+
+    // Class that represents a Yahtzee
+    class ScoreCardEntryYahtzee : public ScoreCardEntry
+    {
+    public:
+        ScoreCardEntryYahtzee(std::string name = "");
+        void set_points(uint16_t points);
+    };
 }
 
 #endif

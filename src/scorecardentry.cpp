@@ -147,4 +147,21 @@ namespace yahtzee
             __points = 40;
         }
     }
+
+    /***
+     * ScoreCardEntryYahtzee
+     ***/
+
+    // Constructor sets default values
+    ScoreCardEntryYahtzee::ScoreCardEntryYahtzee(std::string name)
+        : ScoreCardEntry(name)
+    {
+    }
+
+    void ScoreCardEntryYahtzee::set_points(uint16_t points)
+    {
+        // We can only set the points if they are valid for this entry. If it is
+        // invalid, we set the points to 0
+        __points = points == 50 ? points : 0;
+    }
 }
