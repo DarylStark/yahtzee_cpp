@@ -40,8 +40,21 @@ namespace yahtzee
         uint16_t __number;
 
     public:
-        ScoreCardEntryNumber(uint16_t number = 1, std::string name = "");
+        ScoreCardEntryNumber(const uint16_t number = 1, std::string name = "");
         void set_number(const uint16_t number);
+        void set_points(const uint16_t points);
+    };
+
+    // Class that represents a item that is a multiple of one specific number,
+    // like the 'Three of a kid' en 'Four or a kind' entries on the ScoreCard.
+    class ScoreCardEntryMultiple : public ScoreCardEntry
+    {
+    private:
+        uint16_t __multiplier;
+
+    public:
+        ScoreCardEntryMultiple(const uint16_t multiplier = 1, std::string name = "");
+        void set_multiplier(const uint16_t multipier);
         void set_points(const uint16_t points);
     };
 }

@@ -41,9 +41,10 @@ namespace yahtzee
      ***/
 
     // Constructor sets default values
-    ScoreCardEntryNumber::ScoreCardEntryNumber(uint16_t number, std::string name)
-        : ScoreCardEntry(name), __number(number)
+    ScoreCardEntryNumber::ScoreCardEntryNumber(const uint16_t number, std::string name)
+        : ScoreCardEntry(name)
     {
+        set_number(number);
     }
 
     // Method to set the number for ScoreCardEntryNumber objects
@@ -60,6 +61,39 @@ namespace yahtzee
         // invalid, we set the points to 0.
         __points = 0;
         if (points % __number == 0 && points <= __number * 5)
+        {
+            __points = points;
+        }
+    }
+
+    /***
+     * ScoreCardEntryMultiple
+     ***/
+
+    // Constructor sets default values
+    ScoreCardEntryMultiple::ScoreCardEntryMultiple(const uint16_t multiplier, std::string name)
+        : ScoreCardEntry(name)
+    {
+        set_multiplier(multiplier);
+    }
+
+    // Method to set the amount of multiples needed for a ScoreCardEntryMultiple
+    // entry.
+    void ScoreCardEntryMultiple::set_multiplier(const uint16_t multiplier)
+    {
+        if (multiplier > 0 && multiplier <= 6)
+        {
+            __multiplier = multiplier;
+        }
+    }
+
+    // Method to set the points for the object
+    void ScoreCardEntryMultiple::set_points(const uint16_t points)
+    {
+        // We an only set the points if they are valid for this entry. If it is
+        // invalid, we set the points to 0
+        __points = 0;
+        if (points >= __multiplier && points <= 30)
         {
             __points = points;
         }
