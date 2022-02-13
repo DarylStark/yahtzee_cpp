@@ -2,19 +2,9 @@
 
 namespace yahtzee
 {
-    ScoreCardEntry::ScoreCardEntry()
-        : __points(0), __name("")
-    {
-    }
-
     ScoreCardEntry::ScoreCardEntry(std::string name)
         : __points(0), __name(name)
     {
-    }
-
-    void ScoreCardEntry::set_points(const uint16_t points)
-    {
-        __points = points;
     }
 
     uint16_t ScoreCardEntry::get_points() const
@@ -45,4 +35,34 @@ namespace yahtzee
     {
         uint += entry.get_points();
     }
+
+    /***
+     * ScoreCardEntryNumber
+     ***/
+
+    // Constructor sets default values
+    ScoreCardEntryNumber::ScoreCardEntryNumber(uint16_t number, std::string name)
+        : ScoreCardEntry(name), __number(number)
+    {
+    }
+
+    // Method to set the number for ScoreCardEntryNumber objects
+    void ScoreCardEntryNumber::set_number(const uint16_t number)
+    {
+        if (number > 0 && number <= 6)
+            __number = number;
+    }
+
+    // Method to set the points for ScoreCardEntryNumber objects
+    void ScoreCardEntryNumber::set_points(const uint16_t points)
+    {
+        // We can only set the points if they are valid for this entry. If it is
+        // invalid, we set the points to 0.
+        __points = 0;
+        if (points % __number == 0 && points <= __number * 5)
+        {
+            __points = points;
+        }
+    }
+
 }

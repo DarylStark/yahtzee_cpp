@@ -11,10 +11,12 @@ namespace yahtzee
     class ScoreCard : public Entity
     {
     private:
-        ScoreCardEntry __entries[13];
-        uint16_t get_total(uint16_t start, uint16_t end);
+        ScoreCardEntryNumber __numbers[6];
+        uint16_t
+        get_total(uint16_t start, uint16_t end);
 
     public:
+        ScoreCard();
         void set_score(uint16_t index, uint16_t score);
         uint16_t get_upper_total(bool include_bonus = false);
         uint16_t get_lower_total();

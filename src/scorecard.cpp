@@ -2,13 +2,22 @@
 
 namespace yahtzee
 {
+    ScoreCard::ScoreCard()
+    {
+        // Configure the entries for the numbers
+        for (int i = 0; i < 6; i++)
+        {
+            __numbers[i].set_number(i + 1);
+        }
+    }
+
     uint16_t ScoreCard::get_total(uint16_t start, uint16_t end)
     {
         // Method to get the sum of a few entries
         uint16_t sum = 0;
         for (uint16_t i = start; i < end; i++)
         {
-            sum += __entries[i];
+            // sum += __entries[i];
         }
         return sum;
     }
@@ -18,7 +27,7 @@ namespace yahtzee
         // Set the sore for a specific entry
         // TODO: if a index is specified that is too high or too low, throw
         //       an exception
-        __entries[index] = score;
+        //__entries[index] = score;
     }
 
     // Getters

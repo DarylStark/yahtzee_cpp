@@ -9,7 +9,7 @@ namespace yahtzee
     // Class that represents a item on the score card
     class ScoreCardEntry : public Entity
     {
-    private:
+    protected:
         // The points written on this entry
         uint16_t __points;
 
@@ -18,11 +18,10 @@ namespace yahtzee
 
     public:
         // Constructors
-        ScoreCardEntry();
-        ScoreCardEntry(std::string name);
+        ScoreCardEntry(std::string name = "");
 
         // Setters and getters
-        void set_points(const uint16_t points);
+        virtual void set_points(const uint16_t points) = 0;
         uint16_t get_points() const;
         void set_name(std::string name);
         std::string get_name() const;
@@ -32,6 +31,19 @@ namespace yahtzee
     };
 
     void operator+=(uint16_t &uint, ScoreCardEntry &entry);
+
+    // Class that represents a item on the score card that is counted by the
+    // amount of a specific number.
+    class ScoreCardEntryNumber : public ScoreCardEntry
+    {
+    private:
+        uint16_t __number;
+
+    public:
+        ScoreCardEntryNumber(uint16_t number = 1, std::string name = "");
+        void set_number(const uint16_t number);
+        void set_points(const uint16_t points);
+    };
 }
 
 #endif
