@@ -18,7 +18,7 @@ namespace yahtzee
         uint16_t get_last_value();
         uint16_t roll();
         void lock();
-        void unlocked();
+        void unlock();
         bool is_locked() const;
     };
 }

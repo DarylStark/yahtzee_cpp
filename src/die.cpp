@@ -31,7 +31,7 @@ namespace yahtzee
         __is_locked = true;
     }
 
-    void Die::unlocked()
+    void Die::unlock()
     {
         __is_locked = false;
     }
