@@ -74,8 +74,9 @@ namespace yahtzee
 
     uint16_t ScoreCardEntryNumber::get_points_for_dieset(const DieSet &set)
     {
-        // Method to set the correct amount of points for a specific DieSet
-        // TODO: Implement
+        // Method to get the correct amount of points for a specific DieSet
+        uint16_t points = set.get_specific_count(__number) * __number;
+        return points;
     }
 
     /***

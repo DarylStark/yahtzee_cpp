@@ -40,4 +40,19 @@ namespace yahtzee
 
         __dies[die_index].unlock();
     }
+
+    uint16_t DieSet::get_specific_count(uint16_t points) const
+    {
+        // Method to get the number of dies with a specific value. For intance,
+        // this method can be used to get the amount of dies that is landed on
+        // the number 3. This can be used to calculate the type of score this
+        // DieSet is.
+        uint16_t count = 0;
+        for (const Die &die : __dies)
+        {
+            if (die.get_last_value() == points)
+                count++;
+        }
+        return count;
+    }
 };

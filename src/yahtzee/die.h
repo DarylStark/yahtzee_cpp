@@ -15,7 +15,7 @@ namespace yahtzee
 
     public:
         Die();
-        uint16_t get_last_value();
+        uint16_t get_last_value() const;
         uint16_t roll();
         void lock();
         void unlock();

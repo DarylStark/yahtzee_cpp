@@ -7,7 +7,7 @@ namespace yahtzee
     {
     }
 
-    uint16_t Die::get_last_value()
+    uint16_t Die::get_last_value() const
     {
         return __last_value;
     }

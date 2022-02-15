@@ -1,8 +1,21 @@
 #include <iostream>
 #include "yahtzee/yahtzee.h"
+#include "yahtzee/scorecardentry.h"
+#include "yahtzee/dieset.h"
 
 int main()
 {
+    using yahtzee::DieSet;
+    using yahtzee::ScoreCardEntryNumber;
+
+    uint16_t nr = 4;
+    ScoreCardEntryNumber entry(nr);
+    DieSet x;
+    std::cout << "Roll:" << std::endl;
+    x.roll();
+    std::cout << "Points for dieset: " << entry.get_points_for_dieset(x) << std::endl;
+    return 0;
+
     // Header
     std::cout << "Yathzee - Created in C++"
               << std::endl
