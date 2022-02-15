@@ -239,7 +239,9 @@ namespace yahtzee
     uint16_t ScoreCardEntryYahtzee::get_points_for_dieset(const DieSet &set) const
     {
         // Method to set the correct amount of points for a specific DieSet
-        // TODO: Implement
+        if (set.get_specific_count(set[0].get_last_value()) == 5)
+            return 50;
+        return 0;
     }
 
     /***
