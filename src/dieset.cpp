@@ -55,4 +55,31 @@ namespace yahtzee
         }
         return count;
     }
+
+    Die DieSet::get_die(uint16_t index) const
+    {
+        // Method that returns the value of a specific die
+        if (index > 4)
+        {
+            // TODO: Exception
+        }
+
+        return __dies[index];
+    }
+
+    uint16_t DieSet::get_sum() const
+    {
+        // Method to get the sum of all dies
+        uint16_t sum = 0;
+        for (const Die &die : __dies)
+        {
+            sum += die.get_last_value();
+        }
+        return sum;
+    }
+
+    Die DieSet::operator[](uint16_t index) const
+    {
+        return get_die(index);
+    }
 };

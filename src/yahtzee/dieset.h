@@ -20,6 +20,10 @@ namespace yahtzee
         void lock(uint16_t die_index);
         void unlock(uint16_t die_index);
         uint16_t get_specific_count(uint16_t points) const;
+        Die get_die(uint16_t index) const;
+        uint16_t get_sum() const;
+
+        Die operator[](uint16_t index) const;
     };
 }
 

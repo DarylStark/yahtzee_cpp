@@ -20,11 +20,11 @@ namespace yahtzee
     public:
         ScoreCardEntry(std::string name = "");
         virtual void set_points(const uint16_t points) = 0;
-        virtual void set_points_for_dieset(const DieSet &set) = 0;
         virtual uint16_t get_points_for_dieset(const DieSet &set) const = 0;
         uint16_t get_points() const;
         void set_name(std::string name);
         std::string get_name() const;
+        void set_points_for_dieset(const DieSet &set);
 
         // Operators
         void operator=(uint16_t points);
@@ -58,7 +58,6 @@ namespace yahtzee
         ScoreCardEntryMultiple(const uint16_t multiplier = 1, std::string name = "");
         void set_multiplier(const uint16_t multipier);
         void set_points(const uint16_t points);
-        void set_points_for_dieset(const DieSet &set);
         uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 
@@ -68,7 +67,6 @@ namespace yahtzee
     public:
         ScoreCardEntryFullHouse(std::string name = "");
         void set_points(uint16_t points);
-        void set_points_for_dieset(const DieSet &set);
         uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 
@@ -81,7 +79,6 @@ namespace yahtzee
     public:
         ScoreCardEntryStraight(bool is_small_straight = false, std::string name = "");
         void set_points(uint16_t points);
-        void set_points_for_dieset(const DieSet &set);
         uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 
@@ -91,7 +88,6 @@ namespace yahtzee
     public:
         ScoreCardEntryYahtzee(std::string name = "");
         void set_points(uint16_t points);
-        void set_points_for_dieset(const DieSet &set);
         uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 
@@ -101,7 +97,6 @@ namespace yahtzee
     public:
         ScoreCardEntryFree(std::string name = "");
         void set_points(uint16_t points);
-        void set_points_for_dieset(const DieSet &set);
         uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 }
