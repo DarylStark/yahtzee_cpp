@@ -6,25 +6,15 @@
 int main()
 {
     using yahtzee::DieSet;
-    using yahtzee::ScoreCardEntryMultiple;
+    using yahtzee::ScoreCardEntryStraight;
 
     // Four of a kind
-    ScoreCardEntryMultiple entry(4);
+    ScoreCardEntryStraight entry(false);
 
     // Roll dies
     DieSet x;
     std::cout << "Roll:" << std::endl;
-    for (int i = 0; i < 5; i++)
-    {
-        std::cout << "Roll " << i << std::endl;
-        x.roll();
-        for (int i = 0; i < 5; i++)
-        {
-            if (x[i].get_last_value() == 4)
-                x.lock(i);
-        }
-        std::cout << std::endl;
-    }
+    x.roll();
 
     // Get theoretic points
     std::cout << "Points for dieset: " << entry.get_points_for_dieset(x) << std::endl;

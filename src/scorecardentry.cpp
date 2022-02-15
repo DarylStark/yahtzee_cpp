@@ -169,20 +169,54 @@ namespace yahtzee
         // We can only set the points if they are valid for this entry. If it is
         // invalid, we set the points to 0
         __points = 0;
-        if (points == 30 && __is_small_straight)
+        if ((points == 30 && __is_small_straight) || (points == 40 && !__is_small_straight))
         {
-            __points = 30;
-        }
-        else if (points == 40 && !__is_small_straight)
-        {
-            __points = 40;
+            __points = points;
         }
     }
 
     uint16_t ScoreCardEntryStraight::get_points_for_dieset(const DieSet &set) const
     {
         // Method to set the correct amount of points for a specific DieSet
-        // TODO: Implement
+
+        // If this is a small straight, we need one of the following
+        // 1, 2, 3, 4
+        //    2, 3, 4, 5
+        //       3, 4, 5, 6
+        // If this is a big straight, we need one of the following
+        // 1, 2, 3, 4, 5
+        //    2, 3, 4, 5, 6
+        // That means that we always need a three and a four. At least
+
+        if (set.get_specific_count(3) == 0 || set.get_specific_count(4) == 0)
+            return 0;
+
+        if (__is_small_straight)
+        {
+            if (
+                (set.get_specific_count(1) > 0 && set.get_specific_count(2) > 0) ||
+                (set.get_specific_count(2) > 0 && set.get_specific_count(5) > 0) ||
+                (set.get_specific_count(5) > 0 && set.get_specific_count(6) > 0))
+            {
+                return 30;
+            }
+
+            // Not a correct small straight
+            return 0;
+        }
+
+        // Big straight, we always need the 2 and the 5
+        if (set.get_specific_count(2) == 0 || set.get_specific_count(5) == 0)
+            return 0;
+
+        // We also need either the 1 or the 6
+        if (set.get_specific_count(1) > 0 || set.get_specific_count(6) > 0)
+        {
+            return 40;
+        }
+
+        // Invalid straight
+        return 0;
     }
 
     /***
