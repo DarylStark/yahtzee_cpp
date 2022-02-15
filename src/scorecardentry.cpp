@@ -66,6 +66,18 @@ namespace yahtzee
         }
     }
 
+    void ScoreCardEntryNumber::set_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
+    uint16_t ScoreCardEntryNumber::get_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
     /***
      * ScoreCardEntryMultiple
      ***/
@@ -99,6 +111,18 @@ namespace yahtzee
         }
     }
 
+    void ScoreCardEntryMultiple::set_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
+    uint16_t ScoreCardEntryMultiple::get_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
     /***
      * ScoreCardEntryFullHouse
      */
@@ -120,6 +144,18 @@ namespace yahtzee
         {
             __points = 25;
         }
+    }
+
+    void ScoreCardEntryFullHouse::set_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
+    uint16_t ScoreCardEntryFullHouse::get_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
     }
 
     /***
@@ -148,6 +184,18 @@ namespace yahtzee
         }
     }
 
+    void ScoreCardEntryStraight::set_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
+    uint16_t ScoreCardEntryStraight::get_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
     /***
      * ScoreCardEntryYahtzee
      ***/
@@ -165,6 +213,18 @@ namespace yahtzee
         __points = points == 50 ? points : 0;
     }
 
+    void ScoreCardEntryYahtzee::set_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
+    uint16_t ScoreCardEntryYahtzee::get_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
     /***
      * ScoreCardEntryFree
      ***/
@@ -180,5 +240,17 @@ namespace yahtzee
         // We can only set the points if they are valid for this entry. If it is
         // invalid, we set the points to 0
         __points = points >= 5 && points <= 30 ? points : 0;
+    }
+
+    void ScoreCardEntryFree::set_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
+    }
+
+    uint16_t ScoreCardEntryFree::get_points_for_dieset(const DieSet &set)
+    {
+        // Method to set the correct amount of points for a specific DieSet
+        // TODO: Implement
     }
 }
