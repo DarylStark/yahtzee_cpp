@@ -21,7 +21,7 @@ namespace yahtzee
         ScoreCardEntry(std::string name = "");
         virtual void set_points(const uint16_t points) = 0;
         virtual void set_points_for_dieset(const DieSet &set) = 0;
-        virtual uint16_t get_points_for_dieset(const DieSet &set) = 0;
+        virtual uint16_t get_points_for_dieset(const DieSet &set) const = 0;
         uint16_t get_points() const;
         void set_name(std::string name);
         std::string get_name() const;
@@ -44,7 +44,7 @@ namespace yahtzee
         void set_number(const uint16_t number);
         void set_points(const uint16_t points);
         void set_points_for_dieset(const DieSet &set);
-        uint16_t get_points_for_dieset(const DieSet &set);
+        uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 
     // Class that represents a item that is a multiple of one specific number,
@@ -59,7 +59,7 @@ namespace yahtzee
         void set_multiplier(const uint16_t multipier);
         void set_points(const uint16_t points);
         void set_points_for_dieset(const DieSet &set);
-        uint16_t get_points_for_dieset(const DieSet &set);
+        uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 
     // Class that represents Full House
@@ -69,7 +69,7 @@ namespace yahtzee
         ScoreCardEntryFullHouse(std::string name = "");
         void set_points(uint16_t points);
         void set_points_for_dieset(const DieSet &set);
-        uint16_t get_points_for_dieset(const DieSet &set);
+        uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 
     // Class that represents a straight
@@ -82,7 +82,7 @@ namespace yahtzee
         ScoreCardEntryStraight(bool is_small_straight = false, std::string name = "");
         void set_points(uint16_t points);
         void set_points_for_dieset(const DieSet &set);
-        uint16_t get_points_for_dieset(const DieSet &set);
+        uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 
     // Class that represents a Yahtzee
@@ -92,7 +92,7 @@ namespace yahtzee
         ScoreCardEntryYahtzee(std::string name = "");
         void set_points(uint16_t points);
         void set_points_for_dieset(const DieSet &set);
-        uint16_t get_points_for_dieset(const DieSet &set);
+        uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 
     // Class that represents a free field entry, like 'chance'
@@ -102,7 +102,7 @@ namespace yahtzee
         ScoreCardEntryFree(std::string name = "");
         void set_points(uint16_t points);
         void set_points_for_dieset(const DieSet &set);
-        uint16_t get_points_for_dieset(const DieSet &set);
+        uint16_t get_points_for_dieset(const DieSet &set) const;
     };
 }
 

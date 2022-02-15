@@ -72,11 +72,10 @@ namespace yahtzee
         // TODO: Implement
     }
 
-    uint16_t ScoreCardEntryNumber::get_points_for_dieset(const DieSet &set)
+    uint16_t ScoreCardEntryNumber::get_points_for_dieset(const DieSet &set) const
     {
         // Method to get the correct amount of points for a specific DieSet
-        uint16_t points = set.get_specific_count(__number) * __number;
-        return points;
+        return set.get_specific_count(__number) * __number;
     }
 
     /***
@@ -118,7 +117,7 @@ namespace yahtzee
         // TODO: Implement
     }
 
-    uint16_t ScoreCardEntryMultiple::get_points_for_dieset(const DieSet &set)
+    uint16_t ScoreCardEntryMultiple::get_points_for_dieset(const DieSet &set) const
     {
         // Method to set the correct amount of points for a specific DieSet
         // TODO: Implement
@@ -153,7 +152,7 @@ namespace yahtzee
         // TODO: Implement
     }
 
-    uint16_t ScoreCardEntryFullHouse::get_points_for_dieset(const DieSet &set)
+    uint16_t ScoreCardEntryFullHouse::get_points_for_dieset(const DieSet &set) const
     {
         // Method to set the correct amount of points for a specific DieSet
         // TODO: Implement
@@ -191,7 +190,7 @@ namespace yahtzee
         // TODO: Implement
     }
 
-    uint16_t ScoreCardEntryStraight::get_points_for_dieset(const DieSet &set)
+    uint16_t ScoreCardEntryStraight::get_points_for_dieset(const DieSet &set) const
     {
         // Method to set the correct amount of points for a specific DieSet
         // TODO: Implement
@@ -220,7 +219,7 @@ namespace yahtzee
         // TODO: Implement
     }
 
-    uint16_t ScoreCardEntryYahtzee::get_points_for_dieset(const DieSet &set)
+    uint16_t ScoreCardEntryYahtzee::get_points_for_dieset(const DieSet &set) const
     {
         // Method to set the correct amount of points for a specific DieSet
         // TODO: Implement
@@ -249,7 +248,7 @@ namespace yahtzee
         // TODO: Implement
     }
 
-    uint16_t ScoreCardEntryFree::get_points_for_dieset(const DieSet &set)
+    uint16_t ScoreCardEntryFree::get_points_for_dieset(const DieSet &set) const
     {
         // Method to set the correct amount of points for a specific DieSet
         // TODO: Implement
