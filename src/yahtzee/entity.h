@@ -16,7 +16,7 @@ namespace yahtzee
     public:
         Entity();
         virtual ~Entity();
-        static uint32_t get_count() const;
+        static uint32_t get_count();
     };
 }
 

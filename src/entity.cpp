@@ -18,7 +18,7 @@ namespace yahtzee
         __entity_count--;
     }
 
-    uint32_t Entity::get_count() const
+    uint32_t Entity::get_count()
     {
         return __entity_count;
     }
