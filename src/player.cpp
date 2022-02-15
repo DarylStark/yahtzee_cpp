@@ -12,7 +12,7 @@ namespace yahtzee
         __name = name;
     }
 
-    std::string Player::get_name()
+    std::string Player::get_name() const
     {
         return __name;
     }

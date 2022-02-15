@@ -11,15 +11,10 @@ namespace yahtzee
         }
     }
 
-    uint16_t ScoreCard::get_total(uint16_t start, uint16_t end)
+    uint16_t ScoreCard::get_total(uint16_t start, uint16_t end) const
     {
-        // Method to get the sum of a few entries
-        uint16_t sum = 0;
-        for (uint16_t i = start; i < end; i++)
-        {
-            // sum += __entries[i];
-        }
-        return sum;
+        // TODO: Implement
+        return 0;
     }
 
     void ScoreCard::set_score(uint16_t index, uint16_t score)
@@ -31,7 +26,7 @@ namespace yahtzee
     }
 
     // Getters
-    uint16_t ScoreCard::get_upper_total(bool include_bonus /* = false */)
+    uint16_t ScoreCard::get_upper_total(bool include_bonus /* = false */) const
     {
         // Method to calculate the total of the upper half of the ScoreCard. If
         // the user wants, he can exclude the 'bonus' that is received after
@@ -53,13 +48,13 @@ namespace yahtzee
         return sum;
     }
 
-    uint16_t ScoreCard::get_lower_total()
+    uint16_t ScoreCard::get_lower_total() const
     {
         // Method to calculate the sum of the entries on the lower half of the
         // ScoreCard.
         return get_total(6, 13);
     }
-    uint16_t ScoreCard::get_total()
+    uint16_t ScoreCard::get_total() const
     {
         // Method to calculate the total number of points on this ScoreCard
         return get_lower_total() + get_upper_total();
