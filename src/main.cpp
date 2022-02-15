@@ -14,6 +14,8 @@ int main()
     std::cout << "Roll:" << std::endl;
     x.roll();
     std::cout << "Points for dieset: " << entry.get_points_for_dieset(x) << std::endl;
+    entry.set_points_for_dieset(x);
+    std::cout << "Set " << entry.get_points() << " points" << std::endl;
     return 0;
 
     // Header

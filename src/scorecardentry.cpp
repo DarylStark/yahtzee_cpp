@@ -69,7 +69,7 @@ namespace yahtzee
     void ScoreCardEntryNumber::set_points_for_dieset(const DieSet &set)
     {
         // Method to set the correct amount of points for a specific DieSet
-        // TODO: Implement
+        set_points(get_points_for_dieset(set));
     }
 
     uint16_t ScoreCardEntryNumber::get_points_for_dieset(const DieSet &set) const
