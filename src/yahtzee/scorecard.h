@@ -1,6 +1,7 @@
 #ifndef __SCORECARD_H__
 #define __SCORECARD_H__
 
+#include <string>
 #include "entity.h"
 #include "scorecardentry.h"
 
@@ -11,15 +12,18 @@ namespace yahtzee
     class ScoreCard : public Entity
     {
     private:
-        ScoreCardEntryNumber __numbers[6];
+        ScoreCardEntry *__entries[13];
         uint16_t get_total(uint16_t start, uint16_t end) const;
 
     public:
         ScoreCard();
-        void set_score(uint16_t index, uint16_t score);
+        ~ScoreCard();
         uint16_t get_upper_total(bool include_bonus = false) const;
         uint16_t get_lower_total() const;
         uint16_t get_total() const;
+        const ScoreCardEntry &get_entry(uint16_t index) const;
+
+        const ScoreCardEntry &operator[](uint16_t index) const;
     };
 }
 

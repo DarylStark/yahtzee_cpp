@@ -1,31 +1,31 @@
 #include <iostream>
 #include "yahtzee/yahtzee.h"
-#include "yahtzee/scorecardentry.h"
+#include "yahtzee/scorecard.h"
 #include "yahtzee/dieset.h"
 
 int main()
 {
-    using yahtzee::DieSet;
-    using yahtzee::ScoreCardEntryFullHouse;
+    using namespace yahtzee;
+    ScoreCard scores;
+    DieSet dies;
 
-    // Four of a kind
-    ScoreCardEntryFullHouse entry;
+    dies.roll();
 
-    // Roll dies
-    DieSet x;
-    x.roll();
-    std::cout << std::endl;
+    uint16_t highest_index = 0;
+    uint16_t highest_score = 0;
+    for (int i = 0; i < 13; i++)
+    {
+        std::cout << scores[i].get_name() << " --> " << scores[i].get_points() << " --> " << scores[i].get_points_for_dieset(dies) << std::endl;
+        if (scores[i].get_points_for_dieset(dies) > highest_score)
+        {
+            highest_score = scores[i].get_points_for_dieset(dies);
+            highest_index = i;
+        }
+    }
 
-    // Get theoretic points
-    std::cout << "Points for dieset: " << entry.get_points_for_dieset(x) << std::endl;
+    std::cout << std::endl
+              << "Best option is " << scores[highest_index].get_name() << std::endl;
 
-    // Set points
-    entry.set_points_for_dieset(x);
-    std::cout << "Set " << entry.get_points() << " points" << std::endl;
-
-    for (int i = 0; i < 5; i++)
-        std::cout << x[i].get_last_value() << " ";
-    std::cout << std::endl;
     return 0;
 
     // Header
