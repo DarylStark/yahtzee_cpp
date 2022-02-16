@@ -276,6 +276,6 @@ namespace yahtzee
     uint16_t ScoreCardEntryFree::get_points_for_dieset(const DieSet &set) const
     {
         // Method to set the correct amount of points for a specific DieSet
-        // TODO: Implement
+        return set.get_sum();
     }
 }
