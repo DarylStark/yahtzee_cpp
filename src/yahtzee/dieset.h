@@ -2,6 +2,7 @@
 #define __DIESET_H__
 
 #include <vector>
+#include <set>
 #include "entity.h"
 #include "die.h"
 
@@ -22,6 +23,9 @@ namespace yahtzee
         uint16_t get_specific_count(uint16_t points) const;
         Die get_die(uint16_t index) const;
         uint16_t get_sum() const;
+        uint16_t get_distribution() const;
+        uint16_t get_max() const;
+        uint16_t get_min() const;
 
         Die operator[](uint16_t index) const;
     };

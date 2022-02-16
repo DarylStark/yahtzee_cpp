@@ -150,7 +150,19 @@ namespace yahtzee
     uint16_t ScoreCardEntryFullHouse::get_points_for_dieset(const DieSet &set) const
     {
         // Method to set the correct amount of points for a specific DieSet
-        // TODO: Implement
+        uint16_t values = set.get_distribution();
+        if (values == 2)
+        {
+            int x = set.get_max();
+            int y = set.get_min();
+            if (
+                (set.get_specific_count(set.get_min()) == 2 || set.get_specific_count(set.get_min()) == 3) &&
+                (set.get_specific_count(set.get_max()) == 2 || set.get_specific_count(set.get_max()) == 3))
+            {
+                return 25;
+            }
+        }
+        return 0;
     }
 
     /***
