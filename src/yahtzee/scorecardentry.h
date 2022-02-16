@@ -13,6 +13,7 @@ namespace yahtzee
     protected:
         // The points written on this entry
         uint16_t __points;
+        bool __set;
 
         // The name of this entry
         std::string __name;
@@ -25,6 +26,7 @@ namespace yahtzee
         void set_name(std::string name);
         std::string get_name() const;
         void set_points_for_dieset(const DieSet &set);
+        bool is_set() const;
 
         // Operators
         void operator=(uint16_t points);

@@ -3,6 +3,7 @@
 
 #include <string>
 #include "entity.h"
+#include "dieset.h"
 #include "scorecardentry.h"
 
 namespace yahtzee
@@ -22,6 +23,7 @@ namespace yahtzee
         uint16_t get_lower_total() const;
         uint16_t get_total() const;
         const ScoreCardEntry &get_entry(uint16_t index) const;
+        void set_points_for_dieset(uint16_t index, DieSet &set);
 
         const ScoreCardEntry &operator[](uint16_t index) const;
     };

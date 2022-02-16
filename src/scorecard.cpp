@@ -46,7 +46,7 @@ namespace yahtzee
 
     ScoreCard::~ScoreCard()
     {
-        for (int i = 0; i < 11; i++)
+        for (int i = 0; i < 13; i++)
         {
             if (__entries[i] != nullptr)
                 delete __entries[i];
@@ -103,12 +103,23 @@ namespace yahtzee
     const ScoreCardEntry &ScoreCard::get_entry(uint16_t index) const
     {
         // Method that returns the value of a specific entry
-        if (index > 5)
+        if (index > 12)
         {
             // TODO: Exception
         }
 
         return *(__entries[index]);
+    }
+
+    void ScoreCard::set_points_for_dieset(uint16_t index, DieSet &set)
+    {
+        // Method that sets points to a specific entry
+        if (index > 12)
+        {
+            // TODO: Exception
+        }
+
+        return __entries[index]->set_points_for_dieset(set);
     }
 
     const ScoreCardEntry &ScoreCard::operator[](uint16_t index) const

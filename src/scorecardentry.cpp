@@ -3,7 +3,7 @@
 namespace yahtzee
 {
     ScoreCardEntry::ScoreCardEntry(std::string name)
-        : __points(0), __name(name)
+        : __points(0), __set(false), __name(name)
     {
     }
 
@@ -32,6 +32,11 @@ namespace yahtzee
     {
         // Method to set the correct amount of points for a specific DieSet
         set_points(get_points_for_dieset(set));
+    }
+
+    bool ScoreCardEntry::is_set() const
+    {
+        return __set;
     }
 
     // We overload the += operator for the uint16_t type so we can easily add
@@ -65,6 +70,7 @@ namespace yahtzee
     {
         // We can only set the points if they are valid for this entry. If it is
         // invalid, we set the points to 0.
+        __set = true;
         __points = 0;
         if (points % __number == 0 && points <= __number * 5)
         {
@@ -104,6 +110,7 @@ namespace yahtzee
     {
         // We can only set the points if they are valid for this entry. If it is
         // invalid, we set the points to 0
+        __set = true;
         __points = 0;
         if (points >= __multiplier && points <= 30)
         {
@@ -140,6 +147,7 @@ namespace yahtzee
         // We can only set the points if they are valid for this entry. If it is
         // invalid, we set the points to 0. For Full House, there are only two
         // possibilities: 25 points or no points.
+        __set = true;
         __points = 0;
         if (points == 25)
         {
@@ -180,6 +188,7 @@ namespace yahtzee
     {
         // We can only set the points if they are valid for this entry. If it is
         // invalid, we set the points to 0
+        __set = true;
         __points = 0;
         if ((points == 30 && __is_small_straight) || (points == 40 && !__is_small_straight))
         {
@@ -245,6 +254,7 @@ namespace yahtzee
     {
         // We can only set the points if they are valid for this entry. If it is
         // invalid, we set the points to 0
+        __set = true;
         __points = points == 50 ? points : 0;
     }
 
@@ -270,6 +280,7 @@ namespace yahtzee
     {
         // We can only set the points if they are valid for this entry. If it is
         // invalid, we set the points to 0
+        __set = true;
         __points = points >= 5 && points <= 30 ? points : 0;
     }
 

@@ -9,22 +9,27 @@ int main()
     ScoreCard scores;
     DieSet dies;
 
-    dies.roll();
-
-    uint16_t highest_index = 0;
-    uint16_t highest_score = 0;
-    for (int i = 0; i < 13; i++)
+    for (int x = 0; x < 1024; x++)
     {
-        std::cout << scores[i].get_name() << " --> " << scores[i].get_points() << " --> " << scores[i].get_points_for_dieset(dies) << std::endl;
-        if (scores[i].get_points_for_dieset(dies) > highest_score)
-        {
-            highest_score = scores[i].get_points_for_dieset(dies);
-            highest_index = i;
-        }
-    }
+        dies.roll();
 
-    std::cout << std::endl
-              << "Best option is " << scores[highest_index].get_name() << std::endl;
+        uint16_t highest_index = 0;
+        uint16_t highest_score = 0;
+        for (int i = 0; i < 13; i++)
+        {
+            std::cout << scores[i].get_name() << " --> " << scores[i].get_points() << " --> " << scores[i].get_points_for_dieset(dies) << std::endl;
+            if (!scores[i].is_set() && scores[i].get_points_for_dieset(dies) > highest_score)
+            {
+                highest_score = scores[i].get_points_for_dieset(dies);
+                highest_index = i;
+            }
+        }
+
+        std::cout << std::endl
+                  << "Best option is " << scores[highest_index].get_name() << std::endl;
+
+        scores.set_points_for_dieset(highest_index, dies);
+    }
 
     return 0;
 
