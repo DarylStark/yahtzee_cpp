@@ -11,10 +11,10 @@
                 "debug"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/src",
+                "cwd": "${workspaceFolder}",
                 "env": {
-                    "OUT_DIR": "../build/debug",
-                    "OUT_OBJ_DIR": "../build/debug/obj"
+                    "OUT_DIR": "build/debug",
+                    "OUT_OBJ_DIR": "build/debug/obj"
                 }
             },
             "problemMatcher": [
@@ -33,10 +33,10 @@
                 "release"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/src",
+                "cwd": "${workspaceFolder}",
                 "env": {
-                    "OUT_DIR": "../build/release",
-                    "OUT_OBJ_DIR": "../build/release/obj"
+                    "OUT_DIR": "build/release",
+                    "OUT_OBJ_DIR": "build/release/obj"
                 }
             },
             "problemMatcher": [
@@ -55,9 +55,9 @@
                 "clean"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/src",
+                "cwd": "${workspaceFolder}",
                 "env": {
-                    "CLEAN_DIR": "../build"
+                    "CLEAN_DIR": "build"
                 }
             },
             "problemMatcher": [
