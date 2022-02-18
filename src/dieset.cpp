@@ -1,5 +1,4 @@
 #include "yahtzee/dieset.h"
-#include <iostream>
 
 namespace yahtzee
 {
@@ -15,7 +14,6 @@ namespace yahtzee
         for (Die &die : __dies)
         {
             die.roll();
-            std::cout << die.get_last_value() << std::endl;
         }
     }
 
@@ -56,7 +54,7 @@ namespace yahtzee
         return count;
     }
 
-    Die DieSet::get_die(uint16_t index) const
+    const Die &DieSet::get_die(uint16_t index) const
     {
         // Method that returns the value of a specific die
         if (index > 4)
@@ -113,7 +111,7 @@ namespace yahtzee
         return min;
     }
 
-    Die DieSet::operator[](uint16_t index) const
+    const Die &DieSet::operator[](uint16_t index) const
     {
         return get_die(index);
     }

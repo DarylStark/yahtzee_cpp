@@ -2,7 +2,6 @@
 #define __PLAYER_H__
 
 #include <string>
-#include <vector>
 #include "entity.h"
 #include "scorecard.h"
 
@@ -13,7 +12,7 @@ namespace yahtzee
     {
     private:
         std::string __name;
-        std::vector<ScoreCard> __score_cards;
+        ScoreCard *__score_cards;
 
     public:
         Player(std::string name = "");
