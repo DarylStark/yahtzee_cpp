@@ -8,7 +8,7 @@
             "name": "g++ - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/yahtzee",
+            "program": "${workspaceFolder}/build/debug/yahtzee",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/build/",
@@ -22,7 +22,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Build application",
+            "preLaunchTask": "Build application (debug)",
             "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
