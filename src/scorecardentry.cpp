@@ -161,8 +161,6 @@ namespace yahtzee
         uint16_t values = set.get_distribution();
         if (values == 2)
         {
-            int x = set.get_max();
-            int y = set.get_min();
             if (
                 (set.get_specific_count(set.get_min()) == 2 || set.get_specific_count(set.get_min()) == 3) &&
                 (set.get_specific_count(set.get_max()) == 2 || set.get_specific_count(set.get_max()) == 3))
@@ -179,7 +177,7 @@ namespace yahtzee
 
     // Constructor sets default values
     ScoreCardEntryStraight::ScoreCardEntryStraight(bool is_small_straight, std::string name)
-        : __is_small_straight(is_small_straight), ScoreCardEntry(name)
+        : ScoreCardEntry(name), __is_small_straight(is_small_straight)
     {
     }
 
