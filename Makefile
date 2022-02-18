@@ -28,6 +28,7 @@ ${OUT_OBJ_DIR}:
 
 # Targets for release
 
+release: CXXFLAGS += -O3
 release: ${OUT_DIR} ${OUT_OBJ_DIR}
 release: ${OUT_DIR}/${EXEC_FILE}
 
