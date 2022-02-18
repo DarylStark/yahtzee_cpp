@@ -44,7 +44,7 @@ tst:
 
 # Linking
 
-${OUT_DIR}/${EXEC_FILE}: ${OUT_OBJ_DIR}/die.o ${OUT_OBJ_DIR}/dieset.o ${OUT_OBJ_DIR}/entity.o ${OUT_OBJ_DIR}/main.o ${OUT_OBJ_DIR}/player.o ${OUT_OBJ_DIR}/scorecard.o ${OUT_OBJ_DIR}/scorecardentry.o ${OUT_OBJ_DIR}/yathzee.o
+${OUT_DIR}/${EXEC_FILE}: ${OUT_OBJ_DIR}/die.o ${OUT_OBJ_DIR}/dieset.o ${OUT_OBJ_DIR}/entity.o ${OUT_OBJ_DIR}/main.o ${OUT_OBJ_DIR}/player.o ${OUT_OBJ_DIR}/scorecard.o ${OUT_OBJ_DIR}/scorecardentry.o ${OUT_OBJ_DIR}/yahtzee.o
 	${CXX} ${CXXFLAGS} -o ${OUT_DIR}/${EXEC_FILE} ${OUT_OBJ_DIR}/*.o
 
 # Object files
@@ -70,8 +70,8 @@ ${OUT_OBJ_DIR}/scorecard.o: ${SRC_DIR}/scorecard.cpp
 ${OUT_OBJ_DIR}/scorecardentry.o: ${SRC_DIR}/scorecardentry.cpp
 	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/scorecardentry.o -c ${SRC_DIR}/scorecardentry.cpp
 
-${OUT_OBJ_DIR}/yathzee.o: ${SRC_DIR}/yathzee.cpp
-	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/yathzee.o -c ${SRC_DIR}/yathzee.cpp
+${OUT_OBJ_DIR}/yahtzee.o: ${SRC_DIR}/yahtzee.cpp
+	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/yahtzee.o -c ${SRC_DIR}/yahtzee.cpp
 
 # Cleaning
 

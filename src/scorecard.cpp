@@ -37,7 +37,7 @@ namespace yahtzee
         __entries[9] = new ScoreCardEntryStraight(true, names[9]);
         __entries[10] = new ScoreCardEntryStraight(false, names[10]);
 
-        // Yathzee
+        // Yahtzee
         __entries[11] = new ScoreCardEntryYahtzee(names[11]);
 
         // Chance
