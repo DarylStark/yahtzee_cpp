@@ -61,7 +61,7 @@ namespace yahtzee
         }
 
         std::cout << std::endl
-                  << "Cool! The game is etting played with " << __players.size() << " player(s)!"
+                  << "Cool! The game is getting played with " << __players.size() << " player(s)!"
                   << std::endl;
 
         // Set the rules
