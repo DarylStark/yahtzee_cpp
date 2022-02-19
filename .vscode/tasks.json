@@ -67,6 +67,25 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "type": "shell",
+            "label": "Create Assembly file for current file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-S",
+                "${relativeFile}",
+                "-o",
+                "${workspaceFolder}/src/${fileBasenameNoExtension}.s"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ],
     "version": "2.0.0"
