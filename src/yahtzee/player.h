@@ -16,9 +16,12 @@ namespace yahtzee
 
     public:
         Player(std::string name = "");
+        ~Player();
 
         void set_name(std::string name);
         std::string get_name() const;
+
+        void set_scorecards(uint16_t scorecards);
     };
 }
 

@@ -4,7 +4,7 @@
 int main()
 {
     using yahtzee::Yahtzee;
-    Yahtzee();
+    Yahtzee y;
 
     return 0;
 }

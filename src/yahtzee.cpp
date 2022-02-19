@@ -69,6 +69,35 @@ namespace yahtzee
         std::cout << "Let's set some rules" << std::endl
                   << std::endl;
 
-        std::cout << "How many scorecards do you want each user to have: ";
+        while (__cards == 0)
+        {
+            // We request the number of scorecards as a string and convert that
+            // to a integer. We don't use std::cin since it reads up to the
+            // newline and doesn't flush the buffer.
+            std::cout << "How many scorecards do you want each user to have: ";
+            std::string cards;
+            std::getline(std::cin, cards);
+            try
+            {
+                // Convert the std::string to a inteer
+                __cards = std::stoi(cards);
+            }
+            catch (std::invalid_argument &)
+            {
+                // User entered a invalid number
+                __cards = 0;
+            }
+        }
+
+        // Make sure each player gets the amount of cards as entered
+        for (Player &p : __players)
+        {
+            p.set_scorecards(__cards);
+        }
+
+        uint16_t turns = __players.size() * __cards * 13;
+
+        std::cout << std::endl
+                  << "Alright, let's start the game! This game is gonne take " << turns << " turns to finish." << std::endl;
     }
 }
