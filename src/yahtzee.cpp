@@ -21,6 +21,9 @@ namespace yahtzee
 
         // Initialize the game
         initialize();
+
+        // Set the game up
+        setup();
     }
 
     void Yahtzee::initialize()
@@ -100,4 +103,11 @@ namespace yahtzee
         std::cout << std::endl
                   << "Alright, let's start the game! This game is gonne take " << turns << " turns to finish." << std::endl;
     }
+
+    void Yahtzee::setup()
+    {
+        // Method that sets up the game; it finds out who can start with the
+        // game by throwing two dies; the one with the highest score can
+        // start the game.
+        }
 }
