@@ -11,6 +11,9 @@ OUT_OBJ_DIR ?= build/obj
 CLEAN_DIR ?= build
 SRC_DIR = src
 
+# Object files that need to be created
+OBJS = main1.o test1.o
+
 # Phonies
 .PHONY: all release debug clean
 
@@ -45,29 +48,8 @@ ${OUT_DIR}/${EXEC_FILE}: ${OUT_OBJ_DIR}/die.o ${OUT_OBJ_DIR}/dieset.o ${OUT_OBJ_
 
 # Object files
 
-${OUT_OBJ_DIR}/main.o: ${SRC_DIR}/main.cpp
-	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/main.o -c ${SRC_DIR}/main.cpp
-
-${OUT_OBJ_DIR}/die.o: ${SRC_DIR}/die.cpp
-	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/die.o -c ${SRC_DIR}/die.cpp
-
-${OUT_OBJ_DIR}/dieset.o: ${SRC_DIR}/dieset.cpp
-	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/dieset.o -c ${SRC_DIR}/dieset.cpp
-
-${OUT_OBJ_DIR}/entity.o: ${SRC_DIR}/entity.cpp
-	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/entity.o -c ${SRC_DIR}/entity.cpp
-
-${OUT_OBJ_DIR}/player.o: ${SRC_DIR}/player.cpp
-	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/player.o -c ${SRC_DIR}/player.cpp
-
-${OUT_OBJ_DIR}/scorecard.o: ${SRC_DIR}/scorecard.cpp
-	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/scorecard.o -c ${SRC_DIR}/scorecard.cpp
-
-${OUT_OBJ_DIR}/scorecardentry.o: ${SRC_DIR}/scorecardentry.cpp
-	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/scorecardentry.o -c ${SRC_DIR}/scorecardentry.cpp
-
-${OUT_OBJ_DIR}/yahtzee.o: ${SRC_DIR}/yahtzee.cpp
-	${CXX} ${CXXFLAGS} -o ${OUT_OBJ_DIR}/yahtzee.o -c ${SRC_DIR}/yahtzee.cpp
+${OUT_OBJ_DIR}/%.o: ${SRC_DIR}/%.cpp
+	${CXX} ${CXXFLAGS} -o $@ -c $<
 
 # Cleaning
 
