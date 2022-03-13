@@ -38,11 +38,6 @@ debug: CXXFLAGS += -g
 debug: ${OUT_DIR} ${OUT_OBJ_DIR}
 debug: ${OUT_DIR}/${EXEC_FILE}
 
-tst:
-	echo ${EXEC_FILE}
-	echo ${OUT_DIR}
-	echo ${OUT_OBJ_DIR}
-
 # Linking
 
 ${OUT_DIR}/${EXEC_FILE}: ${OUT_OBJ_DIR}/die.o ${OUT_OBJ_DIR}/dieset.o ${OUT_OBJ_DIR}/entity.o ${OUT_OBJ_DIR}/main.o ${OUT_OBJ_DIR}/player.o ${OUT_OBJ_DIR}/scorecard.o ${OUT_OBJ_DIR}/scorecardentry.o ${OUT_OBJ_DIR}/yahtzee.o
